@@ -43,7 +43,7 @@ resource "nutanix_virtual_machine" "vm" {
   num_sockets          = "1"
   memory_size_mib      = 1024
 
-  guest_customization_cloud_init_user_data = base64encode(templatefile("${path.module}/cloudinit.tpl"))
+  guest_customization_cloud_init_user_data = base64encode(templatefile("${path.module}/cloudinit.tpl", { hostname = "aatf-cmdb-${count.index}" }))
   disk_list {
     data_source_reference = {
       kind = "image"
