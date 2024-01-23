@@ -37,7 +37,7 @@ data "nutanix_subnet" "subnet" {
 
 resource "nutanix_virtual_machine" "vm" {
   count = 2
-  name                 = "vm-${count.index}"
+  name                 = "aa-tftestvm-${count.index}"
   cluster_uuid         = data.nutanix_cluster.cluster.id
   num_vcpus_per_socket = "2"
   num_sockets          = "1"
