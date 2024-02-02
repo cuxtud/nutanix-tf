@@ -8,7 +8,3 @@ hostname: ${hostname}
   
 apt_update: true
 apt_upgrade: true
-
-runcmd:
-  - <%=instance.cloudConfig.agentInstall%>
-  - <%=instance.cloudConfig.finalizeServer%>
