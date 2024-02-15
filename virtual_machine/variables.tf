@@ -21,5 +21,10 @@ variable "nutanix_port" {
 
 variable "vm_vcpu" {
   description = "Number of cores for a vm"
-  type = string
+  type        = string
+}
+
+variable "vm_name" {
+  description = "start of the vm name"
+  type        = string
 }

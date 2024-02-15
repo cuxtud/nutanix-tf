@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     nutanix = {
-      source = "nutanix/nutanix"
+      source  = "nutanix/nutanix"
       version = "1.8.1"
     }
   }
@@ -17,14 +17,14 @@ provider "nutanix" {
 }
 
 locals {
-  cluster_name = "nutanix-cluster-dev-east"  # Spefify clustername to deploy VM on
-  subnet_name  = "labs_nutanix_1a"     # Specify subnet to assign to the deployed VM
- # storagecontainer_uuid = "ecc51f12-2263-461f-8c4f-b2a726b05d6a" # Specify storage container uuid (ncli container list name=<storage container name>)
+  cluster_name = "nutanix-cluster-dev-east" # Spefify clustername to deploy VM on
+  subnet_name  = "labs_nutanix_1a"          # Specify subnet to assign to the deployed VM
+  # storagecontainer_uuid = "ecc51f12-2263-461f-8c4f-b2a726b05d6a" # Specify storage container uuid (ncli container list name=<storage container name>)
   image_name = "Morpheus Ubuntu 22.04 20230822"
 }
 
 data "nutanix_image" "image" {
-    image_name = local.image_name
+  image_name = local.image_name
 }
 
 data "nutanix_cluster" "cluster" {
@@ -36,8 +36,8 @@ data "nutanix_subnet" "subnet" {
 }
 
 resource "nutanix_virtual_machine" "vm" {
-  count = 2
-  name                 = "aatf-${count.index}"
+  count                = 2
+  name                 = "${var.vm_name}-${count.index}"
   cluster_uuid         = data.nutanix_cluster.cluster.id
   num_vcpus_per_socket = var.vm_vcpu
   num_sockets          = "1"
