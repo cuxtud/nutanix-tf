@@ -7,4 +7,4 @@ ssh_pwauth: True
 hostname: ${hostname}
   
 apt_update: true
-apt_upgrade: true
+apt_upgrade: true 

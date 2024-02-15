@@ -39,7 +39,7 @@ resource "nutanix_virtual_machine" "vm" {
   count = 2
   name                 = "aatf-${count.index}"
   cluster_uuid         = data.nutanix_cluster.cluster.id
-  num_vcpus_per_socket = "2"
+  num_vcpus_per_socket = var.vm_vcpu
   num_sockets          = "1"
   memory_size_mib      = 1024
 

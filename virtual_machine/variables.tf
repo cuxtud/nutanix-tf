@@ -18,3 +18,8 @@ variable "nutanix_port" {
   type        = string
   default     = "9440"
 }
+
+variable "vm_vcpu" {
+  description = "Number of cores for a vm"
+  type = string
+}
