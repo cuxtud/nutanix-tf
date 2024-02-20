@@ -88,13 +88,13 @@ resource "nutanix_virtual_machine" "vm" {
         }
     }
 
-    # refereer naar de opslag locatie waar de VM wordt gekopieerd
-    storage_config {
-      storage_container_reference {
-        kind = "storage_container"
-        uuid = var.nutanix_storagecontainer_uuid
-      }
-    }
+    # # refereer naar de opslag locatie waar de VM wordt gekopieerd
+    # storage_config {
+    #   storage_container_reference {
+    #     kind = "storage_container"
+    #     uuid = var.nutanix_storagecontainer_uuid
+    #   }
+    # }
   }
   provisioner "local-exec" {
     command = <<-EOT
