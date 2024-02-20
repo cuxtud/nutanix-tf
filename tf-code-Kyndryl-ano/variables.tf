@@ -2,7 +2,6 @@ variable "t_vm_description" {
   description = "Nutanix VM description"
   type = string
   sensitive   = false
-  default  = "<%=customOptions.inp_description%>"
 }
 
 variable "t_ipv4_address" {
@@ -59,13 +58,11 @@ variable "t_num_vcpus_per_socket" {
 variable "t_num_sockets" {
   description = "Nutanix VM vCPU's"
   type = number
-  default = "<%=customOptions.inp_vcpu%>"
 }
 
 variable "t_memory_size_mib" {
   description = "Nutanix VM vMEM"
   type = number
-  default = "<%=customOptions.inp_vmem%>"
 }
 
 variable "t_disk_2_size" {
