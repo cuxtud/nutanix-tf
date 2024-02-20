@@ -133,11 +133,11 @@ variable "nutanix_cluster" {
   sensitive   = false
 }
 
-variable "nutanix_storagecontainer_uuid" {
-  description = "Name of Storage Container" 
-  type        = string
-  sensitive   = false
-}
+# variable "nutanix_storagecontainer_uuid" {
+#   description = "Name of Storage Container" 
+#   type        = string
+#   sensitive   = false
+# }
 
 # redelijk statisch vanaf hier ;-)
 variable "nutanix_username" {
@@ -152,9 +152,9 @@ variable "nutanix_password" {
   sensitive   = true
 }
 
-variable "aap_token" {
-  description = "AAP token"
-  type        = string
-  sensitive   = true
-}
+# variable "aap_token" {
+#   description = "AAP token"
+#   type        = string
+#   sensitive   = true
+# }
 
