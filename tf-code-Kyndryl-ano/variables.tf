@@ -1,24 +1,24 @@
 variable "t_vm_description" {
   description = "Nutanix VM description"
-  type = string
+  type        = string
   sensitive   = false
 }
 
 variable "t_ipv4_address" {
   description = "IPv4 van VM"
-  type = string
+  type        = string
   sensitive   = false
 }
 
 variable "t_vm_name" {
   description = "Nutanix VM name van VM in CAPITALS"
-  type = string
+  type        = string
   sensitive   = false
 }
 
 variable "t_hostname" {
   description = "hostnaam van VM"
-  type = string
+  type        = string
   sensitive   = false
 }
 
@@ -30,17 +30,17 @@ variable "subnet_name" {
 
 variable "t_ipv4_gateway" {
   description = "IPv4 gateway van VM"
-  type = string
+  type        = string
 }
 
 variable "t_ipv4_mask" {
   description = "IPv4 subnetmask van VM"
-  type = string
+  type        = string
 }
 
 variable "t_ipv4_maskbits" {
   description = "IPv4 subnetmaskbits van VM"
-  type = string
+  type        = string
 }
 
 variable "nutanix_imagename" {
@@ -51,44 +51,44 @@ variable "nutanix_imagename" {
 
 variable "t_num_vcpus_per_socket" {
   description = "Nutanix VM vCores per socket, laat deze op 1 staan"
-  type = number
-  default = "1"
+  type        = number
+  default     = "1"
 }
 
 variable "t_num_sockets" {
   description = "Nutanix VM vCPU's"
-  type = number
+  type        = number
 }
 
 variable "t_memory_size_mib" {
   description = "Nutanix VM vMEM"
-  type = number
+  type        = number
 }
 
 variable "t_disk_2_size" {
   description = "Nutanix VM data disk 2"
-  type = string
+  type        = string
 }
 
 variable "t_boot_type" {
   description = "Nutanix VM Boottype"
-  type = string
-  default = "UEFI"
+  type        = string
+  default     = "UEFI"
 }
 
 variable "t_ipv4_nameservers" {
   description = "IPv4 nameservers van VM"
-  type = string
+  type        = string
 }
 
 variable "t_ntpserver" {
   description = "NTP Server"
-  type = string
+  type        = string
 }
 
 variable "t_domain" {
   description = "IPv4 search domein van VM"
-  type = string
+  type        = string
 }
 
 variable "vm_domain" {
@@ -113,8 +113,8 @@ variable "t_admin_password" {
 
 variable "t_admin_unenc" {
   description = "Unencrypted pwd"
-  type = string
-  sensitive = true
+  type        = string
+  sensitive   = true
 }
 
 # Nutanix cluster definitie

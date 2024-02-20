@@ -25,26 +25,26 @@ data "nutanix_image" "image" {
 }
 
 # unattend.xml template vertalen mag niet in een subdirectory staan voor Morpheus
-data "template_file" "unattend"{
-  template  = "${file("${path.module}/unattend2.xml")}"
+data "template_file" "unattend" {
+  template = file("${path.module}/unattend2.xml")
   vars = {
-    ipv4_address   = var.t_ipv4_address
-    ipv4_gateway   = var.t_ipv4_gateway
-    ipv4_mask      = var.t_ipv4_mask
-    ipv4_maskbits  = var.t_ipv4_maskbits
-    ipv4_nameservers  = var.t_ipv4_nameservers
-    vm_name        = var.t_vm_name
-    hostname       = var.t_hostname
-    domain         = var.t_domain
-    ntpserver      = var.t_ntpserver
-    admin_username = var.t_admin_username
-    admin_password = var.t_admin_password
+    ipv4_address        = var.t_ipv4_address
+    ipv4_gateway        = var.t_ipv4_gateway
+    ipv4_mask           = var.t_ipv4_mask
+    ipv4_maskbits       = var.t_ipv4_maskbits
+    ipv4_nameservers    = var.t_ipv4_nameservers
+    vm_name             = var.t_vm_name
+    hostname            = var.t_hostname
+    domain              = var.t_domain
+    ntpserver           = var.t_ntpserver
+    admin_username      = var.t_admin_username
+    admin_password      = var.t_admin_password
     admin_passwordunenc = var.t_admin_unenc
-  } 
+  }
 }
 
 resource "nutanix_virtual_machine" "vm" {
-#  count                = 1
+  #  count                = 1
   name                 = var.t_vm_name
   description          = var.t_vm_description
   provider             = nutanix
@@ -65,8 +65,8 @@ resource "nutanix_virtual_machine" "vm" {
 
   # Unattend.xml op basis van template 
   guest_customization_sysprep = {
-    install_type        = "PREPARED"
-    unattend_xml        = base64encode(data.template_file.unattend.rendered)
+    install_type = "PREPARED"
+    unattend_xml = base64encode(data.template_file.unattend.rendered)
   }
 
   # image referentie die uitgerold wordt
@@ -76,16 +76,16 @@ resource "nutanix_virtual_machine" "vm" {
       uuid = data.nutanix_image.image.id
     }
   }
-  
+
   # diskgrootte zetten van een 2e disk
   disk_list {
     disk_size_bytes = var.t_disk_2_size
     device_properties {
       device_type = "DISK"
-        disk_address = {
-          "adapter_type" = "SCSI"
-          "device_index" = "1"
-        }
+      disk_address = {
+        "adapter_type" = "SCSI"
+        "device_index" = "1"
+      }
     }
 
     # # refereer naar de opslag locatie waar de VM wordt gekopieerd

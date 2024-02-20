@@ -23,7 +23,7 @@
 					<Description>Netwerkdetectieprompt voor alle gebruikers uitschakelen</Description>
                     <Credentials>
                         <Username>${admin_username}</Username>
-                        <Password>${admin_passwordunenc}</Password>
+                        <Password>${admin_password}</Password>
                     </Credentials>
 					<Path>reg ADD HKLM\SYSTEM\CurrentControlSet\Control\Network\NewNetworkWindowOff /f</Path>
 				</RunSynchronousCommand>
@@ -33,7 +33,7 @@
 					<Description>Statisch IP-adres instellen</Description>
                     <Credentials>
                         <Username>${admin_username}</Username>
-                        <Password>${admin_passwordunenc}</Password>
+                        <Password>${admin_password}</Password>
                     </Credentials>
 					<Path>netsh interface ip set address name="Ethernet" static ${ipv4_address} ${ipv4_mask} ${ipv4_gateway}</Path>
 				</RunSynchronousCommand>
@@ -43,7 +43,7 @@
 					<Description>Primaire statische DNS-server instellen</Description>
                     <Credentials>
                         <Username>${admin_username}</Username>
-                        <Password>${admin_passwordunenc}</Password>
+                        <Password>${admin_password}</Password>
                     </Credentials>
 					<Path>netsh interface ip set dnsservers name="Ethernet" static ${ipv4_nameservers} primary</Path> 
 				</RunSynchronousCommand>
@@ -53,7 +53,7 @@
 					<Description>NtpServer inschakelen</Description>
                     <Credentials>
                         <Username>${admin_username}</Username>
-                        <Password>${admin_passwordunenc}</Password>
+                        <Password>${admin_password}</Password>
                     </Credentials>
 					<Path>powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command "Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\w32time\TimeProviders\NtpServer' -Name 'Enabled' -Value 1"</Path>
 				</RunSynchronousCommand>
@@ -63,7 +63,7 @@
 					<Description>Announce Flags-waarde configureren</Description>
                     <Credentials>
                         <Username>${admin_username}</Username>
-                        <Password>${admin_passwordunenc}</Password>
+                        <Password>${admin_password}</Password>
                     </Credentials>
 					<Path>powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command "Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\w32time\Config' -Name 'AnnounceFlags' -Value 5"</Path>
 				</RunSynchronousCommand>
@@ -73,7 +73,7 @@
 					<Description>NtpServer wijzigen</Description>
                     <Credentials>
                         <Username>${admin_username}</Username>
-                        <Password>${admin_passwordunenc}</Password>
+                        <Password>${admin_password}</Password>
                     </Credentials>
 					<Path>powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command "w32tm /config /manualpeerlist:"${ntpserver}" /syncfromflags:manual /reliable:yes /update ; Stop-Service w32time ; Start-Service w32time"</Path>
 				</RunSynchronousCommand>
@@ -83,7 +83,7 @@
 					<Description>CD-ROM-station uitwerpen</Description>
                     <Credentials>
                         <Username>${admin_username}</Username>
-                        <Password>${admin_passwordunenc}</Password>
+                        <Password>${admin_password}</Password>
                     </Credentials>
 					<Path>powershell.exe -NoProfile -Command "$driveEject = New-Object -comObject Shell.Application; $driveEject.Namespace(17).ParseName('D:').InvokeVerb('Eject')"</Path>
 				</RunSynchronousCommand>
@@ -101,9 +101,9 @@
                     <PlainText>false</PlainText>
                 </AdministratorPassword>
             </UserAccounts>
-            <!-- Hide Pages -->
+            Hide Pages
 			<OOBE>
-                <HideEULAPage>true</HideEULAPage>
+                <HideEULAPage>false</HideEULAPage>
                 <HideLocalAccountScreen>true</HideLocalAccountScreen>
                 <HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
                 <HideOnlineAccountScreens>true</HideOnlineAccountScreens>
