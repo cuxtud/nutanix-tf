@@ -52,7 +52,7 @@ variable "nutanix_imagename" {
 variable "t_num_vcpus_per_socket" {
   description = "Nutanix VM vCores per socket, laat deze op 1 staan"
   type        = number
-  default     = "1"
+  default     = 1
 }
 
 variable "t_num_sockets" {
