@@ -71,8 +71,8 @@ resource "nutanix_virtual_machine" "vm" {
 
   # diskgrootte zetten van een 2e disk
   disk_list {
-    disk_size_bytes = 40 * 1024 * 1024 * 1024
-    #disk_size_bytes = var.t_disk_2_size
+    #disk_size_bytes = 40 * 1024 * 1024 * 1024
+    disk_size_bytes = var.t_disk_2_size
     device_properties {
       device_type = "DISK"
       disk_address = {
