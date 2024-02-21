@@ -28,18 +28,10 @@ data "nutanix_image" "image" {
 data "template_file" "unattend" {
   template = file("${path.module}/unattend.xml")
   vars = {
-    ipv4_address        = var.t_ipv4_address
-    ipv4_gateway        = var.t_ipv4_gateway
-    ipv4_mask           = var.t_ipv4_mask
-    ipv4_maskbits       = var.t_ipv4_maskbits
-    ipv4_nameservers    = var.t_ipv4_nameservers
     vm_name             = var.t_vm_name
     hostname            = var.t_hostname
-    domain              = var.t_domain
-    ntpserver           = var.t_ntpserver
     admin_username      = var.t_admin_username
     admin_password      = var.t_admin_password
-    admin_passwordunenc = var.t_admin_unenc
   }
 }
 
