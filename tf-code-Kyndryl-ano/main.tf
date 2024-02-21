@@ -39,7 +39,7 @@ resource "nutanix_virtual_machine" "vm" {
   #  count                = 1
   name                 = var.t_vm_name
   description          = var.t_vm_description
-  # provider             = nutanix
+  provider             = nutanix
   cluster_uuid         = data.nutanix_cluster.cluster.id
   num_vcpus_per_socket = var.t_num_vcpus_per_socket
   num_sockets          = var.t_num_sockets
