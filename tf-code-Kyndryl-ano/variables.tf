@@ -4,11 +4,11 @@ variable "t_vm_description" {
   sensitive   = false
 }
 
-variable "t_ipv4_address" {
-  description = "IPv4 van VM"
-  type        = string
-  sensitive   = false
-}
+# variable "t_ipv4_address" {
+#   description = "IPv4 van VM"
+#   type        = string
+#   sensitive   = false
+# }
 
 variable "t_vm_name" {
   description = "Nutanix VM name van VM in CAPITALS"
@@ -28,20 +28,20 @@ variable "subnet_name" {
   sensitive   = false
 }
 
-variable "t_ipv4_gateway" {
-  description = "IPv4 gateway van VM"
-  type        = string
-}
+# variable "t_ipv4_gateway" {
+#   description = "IPv4 gateway van VM"
+#   type        = string
+# }
 
-variable "t_ipv4_mask" {
-  description = "IPv4 subnetmask van VM"
-  type        = string
-}
+# variable "t_ipv4_mask" {
+#   description = "IPv4 subnetmask van VM"
+#   type        = string
+# }
 
-variable "t_ipv4_maskbits" {
-  description = "IPv4 subnetmaskbits van VM"
-  type        = string
-}
+# variable "t_ipv4_maskbits" {
+#   description = "IPv4 subnetmaskbits van VM"
+#   type        = string
+# }
 
 variable "nutanix_imagename" {
   description = "Name of image for VM"
@@ -81,21 +81,21 @@ variable "t_ipv4_nameservers" {
   type        = string
 }
 
-variable "t_ntpserver" {
-  description = "NTP Server"
-  type        = string
-}
+# variable "t_ntpserver" {
+#   description = "NTP Server"
+#   type        = string
+# }
 
-variable "t_domain" {
-  description = "IPv4 search domein van VM"
-  type        = string
-}
+# variable "t_domain" {
+#   description = "IPv4 search domein van VM"
+#   type        = string
+# }
 
-variable "vm_domain" {
-  description = "Name of domain for VMs"
-  type        = string
-  sensitive   = false
-}
+# variable "vm_domain" {
+#   description = "Name of domain for VMs"
+#   type        = string
+#   sensitive   = false
+# }
 
 # Windows Authentication
 variable "t_admin_username" {
@@ -111,11 +111,11 @@ variable "t_admin_password" {
   sensitive   = true
 }
 
-variable "t_admin_unenc" {
-  description = "Unencrypted pwd"
-  type        = string
-  sensitive   = true
-}
+# variable "t_admin_unenc" {
+#   description = "Unencrypted pwd"
+#   type        = string
+#   sensitive   = true
+# }
 
 # Nutanix cluster definitie
 variable "nutanix_endpoint" {
