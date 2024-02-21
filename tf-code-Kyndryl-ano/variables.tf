@@ -67,7 +67,7 @@ variable "t_memory_size_mib" {
 
 variable "t_disk_2_size" {
   description = "Nutanix VM data disk 2"
-  type        = string
+  type        = number
 }
 
 variable "t_boot_type" {
