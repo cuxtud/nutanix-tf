@@ -90,9 +90,7 @@ resource "nutanix_virtual_machine" "vm" {
     # }
   }
   provisioner "local-exec" {
-    command = <<-EOT
-      echo "not doing anything anymore"
-    EOT
+    command = echo "not doing anything anymore"
   }
 }
 
