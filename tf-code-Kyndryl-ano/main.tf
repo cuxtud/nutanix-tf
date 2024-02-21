@@ -96,9 +96,9 @@ resource "nutanix_virtual_machine" "vm" {
 }
 
 
-output "VMID" {
-  value = nutanix_virtual_machine.vm
-}
+# output "VMID" {
+#   value = nutanix_virtual_machine.vm
+# }
 #
 #
 #output "ip_address" {
