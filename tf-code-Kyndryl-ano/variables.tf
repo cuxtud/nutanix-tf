@@ -51,18 +51,18 @@ variable "nutanix_imagename" {
 
 variable "t_num_vcpus_per_socket" {
   description = "Nutanix VM vCores per socket, laat deze op 1 staan"
-  type        = number
-  default     = 1
+  type        = string
+  default     = "1"
 }
 
 variable "t_num_sockets" {
   description = "Nutanix VM vCPU's"
-  type        = number
+  type        = string
 }
 
 variable "t_memory_size_mib" {
   description = "Nutanix VM vMEM"
-  type        = number
+  type        = string
 }
 
 variable "t_disk_2_size" {
