@@ -76,10 +76,10 @@ variable "t_boot_type" {
   default     = "UEFI"
 }
 
-variable "t_ipv4_nameservers" {
-  description = "IPv4 nameservers van VM"
-  type        = string
-}
+# variable "t_ipv4_nameservers" {
+#   description = "IPv4 nameservers van VM"
+#   type        = string
+# }
 
 # variable "t_ntpserver" {
 #   description = "NTP Server"
