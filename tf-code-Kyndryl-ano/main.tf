@@ -90,7 +90,7 @@ resource "nutanix_virtual_machine" "vm" {
     # }
   }
   provisioner "local-exec" {
-    command = echo "not doing anything anymore"
+    command = "echo \"Hello, World\" > example.txt"
   }
 }
 
