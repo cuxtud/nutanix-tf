@@ -4,11 +4,11 @@ variable "t_vm_description" {
   sensitive   = false
 }
 
-# variable "t_ipv4_address" {
-#   description = "IPv4 van VM"
-#   type        = string
-#   sensitive   = false
-# }
+variable "t_ipv4_address" {
+  description = "IPv4 van VM"
+  type        = string
+  sensitive   = false
+}
 
 variable "t_vm_name" {
   description = "Nutanix VM name van VM in CAPITALS"
@@ -28,15 +28,15 @@ variable "subnet_name" {
   sensitive   = false
 }
 
-# variable "t_ipv4_gateway" {
-#   description = "IPv4 gateway van VM"
-#   type        = string
-# }
+variable "t_ipv4_gateway" {
+  description = "IPv4 gateway van VM"
+  type        = string
+}
 
-# variable "t_ipv4_mask" {
-#   description = "IPv4 subnetmask van VM"
-#   type        = string
-# }
+variable "t_ipv4_mask" {
+  description = "IPv4 subnetmask van VM"
+  type        = string
+}
 
 # variable "t_ipv4_maskbits" {
 #   description = "IPv4 subnetmaskbits van VM"
@@ -76,10 +76,11 @@ variable "t_boot_type" {
   default     = "UEFI"
 }
 
-# variable "t_ipv4_nameservers" {
-#   description = "IPv4 nameservers van VM"
-#   type        = string
-# }
+variable "t_ipv4_nameservers" {
+  description = "IPv4 nameservers van VM"
+  type        = string
+  default = "10.126.0.2"
+}
 
 # variable "t_ntpserver" {
 #   description = "NTP Server"
