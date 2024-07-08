@@ -44,6 +44,7 @@ data "template_file" "unattend" {
     ipv4_mask           = var.t_ipv4_mask
     ipv4_gateway        = var.t_ipv4_gateway
     ipv4_nameservers    = var.t_ipv4_nameservers
+    ntpserver           = var.t_ntpserver
   }
 }
 
