@@ -85,10 +85,11 @@ variable "t_ipv4_nameservers" {
   default = "10.126.0.2"
 }
 
-# variable "t_ntpserver" {
-#   description = "NTP Server"
-#   type        = string
-# }
+variable "t_ntpserver" {
+  description = "NTP Server"
+  type        = string
+  default = "north-america.pool.ntp.org"
+}
 
 # variable "t_domain" {
 #   description = "IPv4 search domein van VM"
