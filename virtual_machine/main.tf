@@ -2,7 +2,7 @@ terraform {
   required_providers {
     nutanix = {
       source  = "nutanix/nutanix"
-      version = "1.8.1"
+      version = "1.9.5"
     }
   }
 }
@@ -71,6 +71,10 @@ resource "nutanix_virtual_machine" "vm" {
 
   nic_list {
     subnet_uuid = data.nutanix_subnet.subnet.id
+    ip_endpoint_list {
+      ip = "10.126.40.202"
+      type = "ASSIGNED"
+    }
   }
 }
 
