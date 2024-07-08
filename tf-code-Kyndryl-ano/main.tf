@@ -39,6 +39,7 @@ data "template_file" "unattend" {
     hostname            = var.t_hostname
     admin_username      = var.t_admin_username
     admin_password      = var.t_admin_password
+    admin_passwordunenc = var.nutanix_password
   }
 }
 
