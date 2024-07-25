@@ -87,6 +87,12 @@ variable "t_ntpserver" {
   default = "north-america.pool.ntp.org"
 }
 
+variable "t_admin_passwordunenc" {
+  description = "unenrcypted admin password"
+  type = string
+  sensitive = true
+}
+
 # variable "t_domain" {
 #   description = "IPv4 search domein van VM"
 #   type        = string
