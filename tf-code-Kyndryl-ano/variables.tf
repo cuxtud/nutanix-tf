@@ -8,7 +8,6 @@ variable "t_ipv4_address" {
   description = "IPv4 van VM"
   type        = string
   sensitive   = false
-  default = "10.126.40.149"
 }
 
 variable "t_vm_name" {
@@ -32,13 +31,11 @@ variable "subnet_name" {
 variable "t_ipv4_gateway" {
   description = "IPv4 gateway van VM"
   type        = string
-  default = "10.126.40.1"
 }
 
 variable "t_ipv4_mask" {
   description = "IPv4 subnetmask van VM"
   type        = string
-  default = "255.255.255.0"
 }
 
 # variable "t_ipv4_maskbits" {
@@ -82,7 +79,6 @@ variable "t_boot_type" {
 variable "t_ipv4_nameservers" {
   description = "IPv4 nameservers van VM"
   type        = string
-  default = "10.126.0.2"
 }
 
 variable "t_ntpserver" {
